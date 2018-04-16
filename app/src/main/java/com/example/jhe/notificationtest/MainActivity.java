@@ -5,11 +5,15 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 R.mipmap.ic_launcher))
                         .setContentIntent(pi)
                         .setAutoCancel(true)
+                        .setSound(Uri.fromFile(new File("system/media/audio/ringtones/Luna.ogg")))
+                        .setVibrate(new long[]{0, 1000, 1000, 1000})
+                        .setLights(Color.GREEN, 1000, 1000)
                         .build();
                 manager.notify(1, notification);
                 break;
