@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setSound(Uri.fromFile(new File("system/media/audio/ringtones/Luna.ogg")))
                         .setVibrate(new long[]{0, 1000, 1000, 1000})
                         .setLights(Color.GREEN, 1000, 1000)
+                        .setPriority(NotificationCompat.PRIORITY_MAX)
                         .build();
                 manager.notify(1, notification);
                 break;
