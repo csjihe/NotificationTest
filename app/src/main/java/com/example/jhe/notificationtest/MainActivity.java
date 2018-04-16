@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(),
                                 R.mipmap.ic_launcher))
                         .setContentIntent(pi)
+                        .setAutoCancel(true)
                         .build();
                 manager.notify(1, notification);
                 break;
